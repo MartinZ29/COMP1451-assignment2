@@ -1,3 +1,4 @@
+package comp1451.assignment2.collection;
 import java.util.HashMap;
 
 import comp1451.assignment2.data.BankCustomer;
