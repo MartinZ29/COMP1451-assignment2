@@ -28,16 +28,17 @@ public class SavingsAccount extends Account {
 	 */
 	public SavingsAccount(double balance, String accountNumber, boolean active) {
 		super(balance, accountNumber, active);
+		setActive(isActive());
 	}
 	
 	/**
 	 * 
 	 */
-	public void setActive(boolean active) {
+	public boolean isActive() {
 		if(this.getBalance() < MIN_AMOUNT) {
-			active = false;
+			return false;
 		}else {
-			active = true;
+			return true;
 		}
 	}
 	
