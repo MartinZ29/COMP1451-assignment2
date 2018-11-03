@@ -1,8 +1,4 @@
-import comp1451.assignment2.data.Account;
-import comp1451.assignment2.data.ChequingAccount;
-import comp1451.assignment2.data.GoldAccount;
-import comp1451.assignment2.data.SavingsAccount;
-
+package comp1451.assignment2.data;
 /**
  * This is assignment 2 for BCIT COMP 1451
  * Student ID # A01013955    Yuxing Zhang

@@ -1,5 +1,7 @@
 import java.util.HashMap;
 
+import comp1451.assignment2.data.BankCustomer;
+
 /**
  * This is assignment 2 for BCIT COMP 1451
  * Student ID # A01013955    Yuxing Zhang
