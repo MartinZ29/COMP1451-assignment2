@@ -1,3 +1,4 @@
+package comp1451.assignment2.data;
 import java.util.ArrayList;
 
 /**
