@@ -16,10 +16,26 @@ public class BankCustomer {
 	private int age;
 	private Account myAccount;
 	
+	/**
+	 * Default constructor
+	 */
 	public BankCustomer() {
 		myAccount = new Account();
 	}
 	
+	/**
+	 * Overload constructor which initialize the BankCustomer with five parameters
+	 * @param firstName
+	 * 				- is the first name of the bank customer
+	 * @param lastName
+	 * 				- is the last name of the bank customer
+	 * @param passcode
+	 * 				- is the passcode for the account
+	 * @param age
+	 * 				- is the age of the bank customer
+	 * @param myAccount
+	 * 				- is the Account collection of the bank customer
+	 */
 	public BankCustomer(String firstName, String lastName, String passcode, int age, Account myAccount) {
 		setFirstName(firstName);
 		setLastName(lastName);
@@ -87,7 +103,7 @@ public class BankCustomer {
 			this.myAccount = new ChequingAccount();
 		}else if(myAccount.getAccountNumber().substring(0, 1).equals("SA")) {
 			this.myAccount = new SavingsAccount();
-		}else if(myAccount.getAccountNumber().substring(0, 1).equals("GL")) {
+		}else if(myAccount.getAccountNumber().substring(0, 1).equals("GL") && age >= 65) {
 			this.myAccount = new GoldAccount();
 		}else {
 			System.out.println("please check account number.");
@@ -127,8 +143,8 @@ public class BankCustomer {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Accessore of Account
+	 * @return myAccount collection
 	 */
 	public Account getAccount() {
 		return myAccount;
