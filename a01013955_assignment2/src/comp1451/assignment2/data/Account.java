@@ -1,5 +1,6 @@
 package comp1451.assignment2.data;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * This is assignment 2 for BCIT COMP 1451
@@ -35,7 +36,7 @@ public class Account {
 	public Account(double balance, String accountNumber, boolean active) {
 		setBalance(balance);
 		setAccountNumber(accountNumber);
-		this.active = active;
+		setActive(active);
 		transactionInfo = new ArrayList<String>();
 	}
 	
@@ -105,6 +106,7 @@ public class Account {
 	public void addToBalance(double amount) {
 		if(amount >=0 ) {
 			this.balance += amount;
+			addTransactionInfo(new Date() + " - deposit: $" + amount);
 			System.out.println(amount + " added to the account.");
 		}else {
 			System.out.println("Please enter valid amount");
@@ -118,6 +120,7 @@ public class Account {
 	public void subtractFromBalance(double amount) {
 		if(amount >= 0 && amount <= balance) {
 			this.balance -= amount;
+			addTransactionInfo(new Date() + " - withdraw: $" + amount);
 			System.out.println(amount + " has been subtracted from the account.");
 		}else {
 			System.out.println("Please enter valid amount");
@@ -125,11 +128,31 @@ public class Account {
 	}
 	
 	/**
-	 * 
+	 * Add transaction information to the ArrayList
 	 * @param s
+	 * 		- is the transaction information
 	 */
 	public void addTransactionInfo(String s) {
 		transactionInfo.add(s);
 	}
 	
+	/**
+	 * Display all the transaction information in the ArrayList of transactionInfo
+	 */
+	public void displayTransactionInfo() {
+		if(transactionInfo.size() > 0) {
+			for(String s : transactionInfo) {
+				System.out.println(s);
+			}
+		}else {
+			System.out.println("There is no transaction information.");
+		}
+	}
+	
+	/**
+	 * toString method to check variables to be correct
+	 */
+	public String toString() {
+		return ("toString()=Account [balance=" +balance + ", accountNubmer=" + accountNumber + ", active=" + active + "]");
+	}
 }
