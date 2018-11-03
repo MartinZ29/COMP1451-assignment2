@@ -61,7 +61,7 @@ public class Account {
 		if(accountNumber != null && !accountNumber.trim().isEmpty()) {
 			this.accountNumber = accountNumber;
 		}else {
-			
+			System.out.println("Account number cannot be null.");
 		}
 	}
 	
