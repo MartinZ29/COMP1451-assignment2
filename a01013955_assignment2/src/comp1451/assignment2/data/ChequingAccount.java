@@ -66,5 +66,13 @@ public class ChequingAccount extends Account{
 		numberOfCheques ++;
 	}
 	
+	/**
+	 * Subtract an amount of money from the balance
+	 * @param amount is how much subtracted
+	 */
+	public void subtractFromBalance(double amount) {
+		super.subtractFromBalance(amount + FEE);
+		numberOfCheques ++;
+	}
 	
 }
