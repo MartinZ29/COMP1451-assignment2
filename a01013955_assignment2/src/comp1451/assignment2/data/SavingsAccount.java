@@ -67,6 +67,6 @@ public class SavingsAccount extends Account {
 	 * toString method to check variables
 	 */
 	public String toString() {
-		return ("account=" + getAccountType() + " [" + super.toString() + "]");
+		return ("account=" + getAccountType() + " [" + super.toString() + "], ");
 	}
 }
