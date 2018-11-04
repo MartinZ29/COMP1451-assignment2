@@ -16,6 +16,7 @@ public class Account {
 	private String accountNumber;
 	private boolean active;
 	private ArrayList<String> transactionInfo;
+	private String accountType;
 	
 	/**
 	 * Default constructor
@@ -33,10 +34,11 @@ public class Account {
 	 * @param active
 	 * 				- is whether this account is active
 	 */
-	public Account(double balance, String accountNumber, boolean active) {
+	public Account(double balance, String accountNumber, boolean active, String accountType) {
 		setBalance(balance);
 		setAccountNumber(accountNumber);
 		setActive(active);
+		setAccountType(accountType);
 		transactionInfo = new ArrayList<String>();
 	}
 	
@@ -76,6 +78,19 @@ public class Account {
 	}
 	
 	/**
+	 * Mutator of accountType
+	 * @param accountType
+	 * 				- is the account type of the account
+	 */
+	public void setAccountType(String accountType) {
+		if(accountType != null && !accountType.trim().isEmpty()) {
+			this.accountType = accountType;
+		}else {
+			System.out.println("Account type cannot be null.");
+		}
+	}
+	
+	/**
 	 * Accessor to balance
 	 * @return balance in double
 	 */
@@ -97,6 +112,14 @@ public class Account {
 	 */
 	public boolean getActive() {
 		return active;
+	}
+	
+	/**
+	 * Accessor to accountType
+	 * @return accountType in String
+	 */
+	public String getAccountType() {
+		return accountType;
 	}
 	
 	/**
