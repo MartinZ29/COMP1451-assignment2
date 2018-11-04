@@ -176,6 +176,6 @@ public class Account {
 	 * toString method to check variables to be correct
 	 */
 	public String toString() {
-		return ("toString()=Account [balance=" +balance + ", accountNubmer=" + accountNumber + ", active=" + active + "]");
+		return ("toString()=Account [balance=" +getBalance() + ", accountNubmer=" + getAccountNumber() + ", active=" + getActive() + "]");
 	}
 }
