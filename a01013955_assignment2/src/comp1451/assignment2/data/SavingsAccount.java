@@ -20,11 +20,13 @@ public class SavingsAccount extends Account {
 	}
 	
 	/**
-	 * 
+	 * Overload constructor which inherits from supertype but has unique requirement
 	 * @param balance
+	 * 				- is the balance of the account
 	 * @param accountNumber
+	 * 				- is the account number of the account
 	 * @param active
-	 * @param MIN_AMOUNT
+	 * 				- is the status of the account
 	 */
 	public SavingsAccount(double balance, String accountNumber, boolean active) {
 		super(balance, accountNumber, active);
@@ -32,7 +34,8 @@ public class SavingsAccount extends Account {
 	}
 	
 	/**
-	 * 
+	 * Check balance with MIN_AMOUNT requirement to set status of the account
+	 * @return active in boolean;
 	 */
 	public boolean isActive() {
 		if(this.getBalance() < MIN_AMOUNT) {
