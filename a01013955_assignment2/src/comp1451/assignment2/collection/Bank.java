@@ -30,7 +30,6 @@ public class Bank {
 	public void createAccount(BankCustomer newCustomer) {
 		if(newCustomer != null) {
 			theBank.put(newCustomer.getAccount().getAccountNumber(), newCustomer);
-			//System.out.println(newCustomer.getAccountNumber() + " has been added to the bank.");      //This is not required yet, just comment out.
 		}else {
 			System.out.println("please add a valid new customer");
 		}
@@ -74,4 +73,30 @@ public class Bank {
 			System.out.println("Please enter valid account number.");
 		}
 	}
+	
+	/**
+	 * Display the detail information of a BankCustomer element in the HashMap
+	 * @param customer is the BankCustomer from theBank to display
+	 */
+	public static void displayCustomerInformation(BankCustomer customer){
+		 if(customer != null && theBank.containsValue(customer)) {                   // Check customer is in theBank
+			 System.out.println(customer.toString());                              //print out customer information as 1-to-1 relationship
+		 }else {
+			 System.out.println("Bank customer is not found in the Bank.");
+		 }
+	  }
+	
+	/**
+	 * Display all elements (BankCustomer) of the HashMap (theBank) by toString()
+	 */
+	public static void displayAllCustomers() {
+		if(theBank != null && !theBank.isEmpty()) {
+			for(String key : theBank.keySet()) {
+				System.out.println(theBank.get(key).toString());
+			}
+		}else {
+			System.out.println("There is no customer in the bank.");
+		}
+	}
+	
 }
