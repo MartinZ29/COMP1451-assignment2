@@ -1,4 +1,7 @@
 package comp1451.assignment2.data;
+
+import java.util.Date;
+
 /**
  * This is assignment 2 for BCIT COMP 1451
  * Student ID # A01013955    Yuxing Zhang
@@ -76,10 +79,35 @@ public class GoldAccount extends Account{
 	}
 	
 	/**
-	 * Accessor of inOverDraft
+	 * Accessor of inOverdraft
 	 * @return inOverDraft in boolean
 	 */
-	public boolean getInOverDraft() {
+	public boolean getInOverdraft() {
 		return inOverdraft;
 	}
+	
+	/**
+	 * Add an amount of money to the balance
+	 * @param amount is how much money added
+	 */
+	public void addToBalance(double amount) {
+		super.addToBalance(amount);
+	}
+	
+	/**
+	 * Subtract an amount of money from the balance and check whether the account is active
+	 * @param amount is how much subtracted
+	 */
+	public void subtractFromBalance(double amount) {
+		if(amount <= getBalance() && amount > 0) {
+			super.subtractFromBalance(amount);
+		}else if(amount > 0 && amount > getBalance() && amount - getBalance() <= OVERDRAFT_AMT) {
+			setBalance(getBalance() - amount - FEE);
+			addTransactionInfo(new Date() + " - withdraw: $" + amount);
+			setInOverdraft(true);
+		}else {
+			System.out.println("Please enter valid amount");
+		}
+	}
+	
 }
