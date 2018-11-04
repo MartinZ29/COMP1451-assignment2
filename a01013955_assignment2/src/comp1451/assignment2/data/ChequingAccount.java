@@ -1,4 +1,7 @@
 package comp1451.assignment2.data;
+
+import java.util.Date;
+
 /**
  * This is assignment 2 for BCIT COMP 1451
  * Student ID # A01013955    Yuxing Zhang
@@ -47,11 +50,21 @@ public class ChequingAccount extends Account{
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Accessor of numberOfCheques
+	 * @return numberOfCheques in int
 	 */
 	public int getNumberOfCheques() {
 		return numberOfCheques;
 	}
+	
+	/**
+	 * Add an amount of money to the balance
+	 * @param amount is how much money added
+	 */
+	public void addToBalance(double amount) {
+		super.addToBalance(amount);
+		numberOfCheques ++;
+	}
+	
 	
 }
