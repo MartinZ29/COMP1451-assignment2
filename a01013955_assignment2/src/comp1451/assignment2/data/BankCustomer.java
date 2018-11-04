@@ -95,8 +95,8 @@ public class BankCustomer {
 	}
 	
 	/**
-	 * 
-	 * @param accountNumber
+	 * Mutator of setAccount
+	 * @param myAccount
 	 */
 	public void setAccount(Account myAccount) {
 		if(myAccount.getAccountNumber().substring(0, 1).equals("CH")) {
@@ -163,5 +163,12 @@ public class BankCustomer {
 		}else {
 			return("");
 		}
+	}
+	
+	/**
+	 * toString() to check variables
+	 */
+	public String toString() {
+		return ("BankCustomer [firstName=" + getFirstName() + ", lastName=" + getLastName() + ", passcode=" + getPasscode() + ", " + myAccount.toString() + "age=" +getAge() + "]");
 	}
 }
