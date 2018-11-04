@@ -1,7 +1,5 @@
 package comp1451.assignment2.data;
 
-import java.util.Date;
-
 /**
  * This is assignment 2 for BCIT COMP 1451
  * Student ID # A01013955    Yuxing Zhang
@@ -18,7 +16,7 @@ public class ChequingAccount extends Account{
 	public final double FEE = 1.0;
 	
 	/**
-	 * 
+	 * 	Default constructor, calls super to inherit from super class
 	 */
 	public ChequingAccount() {
 		super();
@@ -27,9 +25,13 @@ public class ChequingAccount extends Account{
 	/**
 	 * Overload constructor for ChequingAccount
 	 * @param balance
+	 * 				- is the balance of ChequingAccount
 	 * @param accountNumber
+	 * 				- is the account number of ChequingAccount
 	 * @param active
+	 * 				- is the active status of ChequingAccount
 	 * @param numberOfCheques
+	 * 				- is the number of cheques processed of ChequingAccount
 	 */
 	public ChequingAccount(double balance, String accountNumber, boolean active, int numberOfCheques, String accountType) {
 		super(balance, accountNumber, active, accountType);
