@@ -77,4 +77,10 @@ public class ChequingAccount extends Account{
 		numberOfCheques ++;
 	}
 	
+	/**
+	 * toString() to check variables
+	 */
+	public String toString() {
+		return ("account=" + getAccountType() + " [numberOfCheques=" + getNumberOfCheques() + "[, " + super.toString() + "], ");
+	}
 }
