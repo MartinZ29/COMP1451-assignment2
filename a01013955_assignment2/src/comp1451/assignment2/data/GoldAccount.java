@@ -17,12 +17,27 @@ public class GoldAccount extends Account{
 	public final double OVERDRAFT_AMT = 100.0;
 	
 	/**
-	 * 
+	 * Default constructor
 	 */
 	public GoldAccount() {
 		super();
 	}
 	
+	/**
+	 * Overload constructor which inherits from super type and passes more parameters to the constructor
+	 * @param balance
+	 * 				- is the balance of the account
+	 * @param accountNumber
+	 * 				- is the account number of the account
+	 * @param active
+	 * 				- is the active status of the account
+	 * @param interestRate
+	 * 				- is the monthly interest rate of the account
+	 * @param inOverdraft
+	 * 				- is the overdraft status of the account
+	 * @param accountType
+	 * 				- is the account type of the account
+	 */
 	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate, boolean inOverdraft, String accountType) {
 		super(balance, accountNumber, active, accountType);
 		setAccountType("GoldAccount");
@@ -30,6 +45,11 @@ public class GoldAccount extends Account{
 		setInOverdraft(inOverdraft);
 	}
 	
+	/**
+	 * Mutator of interestRate
+	 * @param interestRate
+	 * 				- is the monthly interest rate of the account
+	 */
 	public void setInterestRate(double interestRate) {
 		if(interestRate >= 0) {
 			this.interestRate = interestRate;
@@ -38,14 +58,27 @@ public class GoldAccount extends Account{
 		}
 	}
 	
+	/**
+	 * Mutator of overdraft
+	 * @param inOverdraft
+	 *               - is the overdraft status of the account
+	 */
 	public void setInOverdraft(boolean inOverdraft) {
 		this.inOverdraft = inOverdraft;
 	}
 	
+	/**
+	 * Accessor of interestRate
+	 * @return interestRate in double
+	 */
 	public double getInterestRate() {
 		return interestRate;
 	}
 	
+	/**
+	 * Accessor of inOverDraft
+	 * @return inOverDraft in boolean
+	 */
 	public boolean getInOverDraft() {
 		return inOverdraft;
 	}
