@@ -23,8 +23,9 @@ public class GoldAccount extends Account{
 		super();
 	}
 	
-	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate, boolean inOverdraft) {
-		super(balance, accountNumber, active);
+	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate, boolean inOverdraft, String accountType) {
+		super(balance, accountNumber, active, accountType);
+		setAccountType("GoldAccount");
 		setInterestRate(interestRate);
 		setInOverdraft(inOverdraft);
 	}
