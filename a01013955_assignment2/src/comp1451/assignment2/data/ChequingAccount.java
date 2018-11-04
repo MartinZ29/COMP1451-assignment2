@@ -22,7 +22,7 @@ public class ChequingAccount extends Account{
 	}
 	
 	/**
-	 * 
+	 * Overload constructor for ChequingAccount
 	 * @param balance
 	 * @param accountNumber
 	 * @param active
