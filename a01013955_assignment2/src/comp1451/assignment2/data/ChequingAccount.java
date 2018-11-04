@@ -35,7 +35,7 @@ public class ChequingAccount extends Account{
 	}
 	
 	/**
-	 * 
+	 * set number of cheques for the cheqing account
 	 * @param numberOfCheques
 	 */
 	public void setNumberOfCheques(int numberOfCheques) {
