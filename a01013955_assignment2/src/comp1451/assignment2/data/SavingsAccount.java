@@ -47,6 +47,23 @@ public class SavingsAccount extends Account {
 	}
 	
 	/**
+	 * Add an amount of money to the balance
+	 * @param amount is how much money added
+	 */
+	public void addToBalance(double amount) {
+		super.addToBalance(amount);
+	}
+	
+	/**
+	 * Subtract an amount of money from the balance and check whether the account is active
+	 * @param amount is how much subtracted
+	 */
+	public void subtractFromBalance(double amount) {
+		super.subtractFromBalance(amount);
+		setActive(isActive());
+	}
+	
+	/**
 	 * toString method to check variables
 	 */
 	public String toString() {
