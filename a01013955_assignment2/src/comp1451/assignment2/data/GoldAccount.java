@@ -110,4 +110,10 @@ public class GoldAccount extends Account{
 		}
 	}
 	
+	/**
+	 * toString method to check variables
+	 */
+	public String toString() {
+		return ("account=" + getAccountType() + " [interestRate=" + getInterestRate() + ", overdraft=" + getInOverdraft() + ", " + super.toString() + "], ");
+	}
 }
