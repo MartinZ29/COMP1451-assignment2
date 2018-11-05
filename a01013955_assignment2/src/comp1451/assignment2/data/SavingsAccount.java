@@ -31,6 +31,7 @@ public class SavingsAccount extends Account {
 	public SavingsAccount(double balance, String accountNumber, boolean active) {
 		super(balance, accountNumber, active);
 		setActive(isActive());
+		setAccountType("SavingAccount");
 	}
 	
 	/**
@@ -66,6 +67,6 @@ public class SavingsAccount extends Account {
 	 * toString method to check variables
 	 */
 	public String toString() {
-		return ("account=" + " [" + super.toString() + "], ");
+		return ("account=" + getAccountType() + " [" + super.toString() + "], ");
 	}
 }

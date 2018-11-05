@@ -86,15 +86,7 @@ public class GoldAccount extends Account{
 	public boolean getInOverdraft() {
 		return inOverdraft;
 	}
-	
-	/**
-	 * Accessor of accountType
-	 * @return accountType;
-	 */
-	public String getAccountType() {
-		return accountType;
-	}
-	
+
 	/**
 	 * Add an amount of money to the balance
 	 * @param amount is how much money added

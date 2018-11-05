@@ -58,15 +58,7 @@ public class ChequingAccount extends Account{
 	public int getNumberOfCheques() {
 		return numberOfCheques;
 	}
-	
-	/**
-	 * Accessor of accountType
-	 * @return accountType;
-	 */
-	public String getAccountType() {
-		return accountType;
-	}
-	
+		
 	/**
 	 * Add an amount of money to the balance
 	 * @param amount is how much money added
