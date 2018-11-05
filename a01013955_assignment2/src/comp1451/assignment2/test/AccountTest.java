@@ -24,6 +24,12 @@ public class AccountTest {
 		accountOne.addToBalance(100.0);
 		assertEquals(200.0, accountOne.getBalance());
 	}
+	
+	@Test
+	public void testAddToBalanceNegative() {
+		accountOne.addToBalance(-100.0);
+		assertEquals(100.0, accountOne.getBalance());
+	}
 
 	@Test
 	public void testSubtractFromBalance() {
