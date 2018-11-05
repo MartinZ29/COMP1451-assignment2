@@ -30,6 +30,7 @@ public class Bank {
 	public void createAccount(BankCustomer newCustomer) {
 		if(newCustomer != null) {
 			theBank.put(newCustomer.getAccount().getAccountNumber(), newCustomer);
+			System.out.println("add: " + newCustomer.getAccount().getBalance() + " " + newCustomer.getAccount().getAccountNumber());
 		}else {
 			System.out.println("please add a valid new customer");
 		}
@@ -81,6 +82,8 @@ public class Bank {
 	public static void displayCustomerInformation(BankCustomer customer){
 		 if(customer != null && theBank.containsValue(customer)) {                   // Check customer is in theBank
 			 System.out.println(customer.toString());                              //print out customer information as 1-to-1 relationship
+			 System.out.println("Account Activity:");
+			 customer.getAccount().displayTransactionInfo();
 		 }else {
 			 System.out.println("Bank customer is not found in the Bank.");
 		 }

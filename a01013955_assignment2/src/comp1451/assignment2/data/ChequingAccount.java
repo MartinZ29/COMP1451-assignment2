@@ -19,7 +19,7 @@ public class ChequingAccount extends Account{
 	 * 	Default constructor, calls super to inherit from super class
 	 */
 	public ChequingAccount() {
-		super();
+		
 	}
 	
 	/**
@@ -33,10 +33,10 @@ public class ChequingAccount extends Account{
 	 * @param numberOfCheques
 	 * 				- is the number of cheques processed of ChequingAccount
 	 */
-	public ChequingAccount(double balance, String accountNumber, boolean active, int numberOfCheques, String accountType) {
-		super(balance, accountNumber, active, accountType);
-		setAccountType("ChequingAccount");
+	public ChequingAccount(double balance, String accountNumber, boolean active, int numberOfCheques) {
+		super(balance, accountNumber, active);
 		setNumberOfCheques(numberOfCheques);
+		setAccountType("ChequingAccount");
 	}
 	
 	/**
@@ -57,6 +57,10 @@ public class ChequingAccount extends Account{
 	 */
 	public int getNumberOfCheques() {
 		return numberOfCheques;
+	}
+	
+	public String getAccountType() {
+		return accountType;
 	}
 	
 	/**
@@ -81,6 +85,6 @@ public class ChequingAccount extends Account{
 	 * toString() to check variables
 	 */
 	public String toString() {
-		return ("account=" + getAccountType() + " [numberOfCheques=" + getNumberOfCheques() + "[, " + super.toString() + "], ");
+		return ("account=" + getAccountType() + " [numberOfCheques=" + getNumberOfCheques() + ", " + super.toString() + "], ");
 	}
 }

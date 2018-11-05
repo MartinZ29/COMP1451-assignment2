@@ -41,12 +41,12 @@ public class GoldAccount extends Account{
 	 * @param accountType
 	 * 				- is the account type of the account
 	 */
-	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate, boolean inOverdraft, String accountType) {
-		super(balance, accountNumber, active, accountType);
-		setAccountType("GoldAccount");
+	public GoldAccount(double balance, String accountNumber, boolean active, double interestRate, boolean inOverdraft) {
+		super(balance, accountNumber, active);
 		setInterestRate(interestRate);
 		setInOverdraft(inOverdraft);
 	}
+	
 	
 	/**
 	 * Mutator of interestRate
@@ -114,6 +114,6 @@ public class GoldAccount extends Account{
 	 * toString method to check variables
 	 */
 	public String toString() {
-		return ("account=" + getAccountType() + " [interestRate=" + getInterestRate() + ", overdraft=" + getInOverdraft() + ", " + super.toString() + "], ");
+		return ("account=" + " [interestRate=" + getInterestRate() + ", overdraft=" + getInOverdraft() + ", " + super.toString() + "], ");
 	}
 }

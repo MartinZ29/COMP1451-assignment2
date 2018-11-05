@@ -1,6 +1,6 @@
 package comp1451.assignment2.application;
 
-import comp1451.assignment2.collection.Bank;
+import comp1451.assignment2.collection.*;
 import comp1451.assignment2.reader.InputReader;
 import comp1451.assignment2.data.*;
 
@@ -62,8 +62,12 @@ public class ATM {
 				break;
 			case 5:
 				exit = true;
-				login = false;
+				
 				System.out.println("Thank you for banking at Bullwinkle's Bank");
+				System.out.println("ACCOUNT SUMMARY:");
+				Bank.displayCustomerInformation(Bank.theBank.get(accountNumber));
+				login = false;
+				System.out.println();
 				System.out.println("DEBUG: Displaying all the accounts in the Bank.");
 				Bank.displayAllCustomers();
 				break;
@@ -84,12 +88,9 @@ public class ATM {
 		BankCustomer customerTwo;
 		BankCustomer customerThree;
 		
-		customerOne = new BankCustomer("Darby", "Dog", "ST-123", "123");
-		customerOne.setBalance(0);
-		customerTwo = new BankCustomer("Freckle", "Cat", "ST-789", "789");
-		customerTwo.setBalance(0);
-		customerThree = new BankCustomer("Myia", "Dog", "ST-456", "456");
-		customerThree.setBalance(0);
+		customerOne = new BankCustomer("Darby", "Dog", "123", 35, new SavingsAccount(100, "SA-123", true));
+		customerTwo = new BankCustomer("Freckle", "Cat", "789", 65, new GoldAccount(200, "GL-123", true, 0.025, false));
+		customerThree = new BankCustomer("Myia", "Dog", "456", 12, new ChequingAccount(50, "CH-123", true, 0));
 		
 		bank = new Bank();
 		bank.createAccount(customerOne);

@@ -16,7 +16,8 @@ public class Account {
 	private String accountNumber;
 	private boolean active;
 	private ArrayList<String> transactionInfo;
-	private String accountType;
+	protected String accountType;
+
 	
 	/**
 	 * Default constructor
@@ -34,11 +35,11 @@ public class Account {
 	 * @param active
 	 * 				- is whether this account is active
 	 */
-	public Account(double balance, String accountNumber, boolean active, String accountType) {
+	public Account(double balance, String accountNumber, boolean active) {
 		setBalance(balance);
 		setAccountNumber(accountNumber);
 		setActive(active);
-		setAccountType(accountType);
+
 		transactionInfo = new ArrayList<String>();
 	}
 	
@@ -48,7 +49,7 @@ public class Account {
 	 * 			- is the balance of the account
 	 */
 	public void setBalance(double balance) {
-		if(balance > 0) {
+		if(balance >= 0) {
 			this.balance = balance;
 		}else {
 			this.balance = 0.0;
@@ -163,12 +164,10 @@ public class Account {
 	 * Display all the transaction information in the ArrayList of transactionInfo
 	 */
 	public void displayTransactionInfo() {
-		if(transactionInfo.size() > 0) {
-			for(String s : transactionInfo) {
+		for(String s : transactionInfo) {
+			if(transactionInfo.size() > 0) {
 				System.out.println(s);
 			}
-		}else {
-			System.out.println("There is no transaction information.");
 		}
 	}
 	
