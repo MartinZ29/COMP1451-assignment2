@@ -59,6 +59,10 @@ public class ChequingAccount extends Account{
 		return numberOfCheques;
 	}
 	
+	/**
+	 * Accessor of accountType
+	 * @return accountType;
+	 */
 	public String getAccountType() {
 		return accountType;
 	}
