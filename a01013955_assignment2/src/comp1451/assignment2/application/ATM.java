@@ -89,8 +89,11 @@ public class ATM {
 		BankCustomer customerThree;
 		
 		customerOne = new BankCustomer("Darby", "Dog", "123", 35, new SavingsAccount(100, "SA-123", true));
-		customerTwo = new BankCustomer("Freckle", "Cat", "789", 65, new GoldAccount(200, "GL-123", true, 0.025, false));
-		customerThree = new BankCustomer("Myia", "Dog", "456", 12, new ChequingAccount(50, "CH-123", true, 0));
+		customerTwo = new BankCustomer("Freckle", "Cat", "789", 65, new GoldAccount(200, "GL-123", true));
+		((GoldAccount) customerTwo.getAccount()).setInterestRate(0.025);
+		((GoldAccount) customerTwo.getAccount()).setInOverdraft(false);
+		customerThree = new BankCustomer("Myia", "Dog", "456", 12, new ChequingAccount(50, "CH-123", true));
+		((ChequingAccount) customerThree.getAccount()).setNumberOfCheques(0);
 		
 		bank = new Bank();
 		bank.createAccount(customerOne);

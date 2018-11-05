@@ -33,7 +33,7 @@ public class ChequingAccount extends Account{
 	 * @param numberOfCheques
 	 * 				- is the number of cheques processed of ChequingAccount
 	 */
-	public ChequingAccount(double balance, String accountNumber, boolean active, int numberOfCheques) {
+	public ChequingAccount(double balance, String accountNumber, boolean active) {
 		super(balance, accountNumber, active);
 		setNumberOfCheques(numberOfCheques);
 		setAccountType("ChequingAccount");

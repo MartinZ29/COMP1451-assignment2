@@ -99,10 +99,12 @@ public class BankCustomer {
 	 * @param myAccount
 	 */
 	public void setAccount(Account myAccount) {
-		if(myAccount != null && getAge() >= 65) {
-			this.myAccount = new GoldAccount(myAccount.getBalance(), myAccount.getAccountNumber(), myAccount.getActive(), ((GoldAccount) myAccount).getInterestRate(), ((GoldAccount) myAccount).getInOverdraft());
-		}else if(myAccount !=null && getAge() < 65){
-			this.myAccount = myAccount;
+		if(myAccount != null && getAge() >= 65 && myAccount.getAccountNumber().substring(0, 2).equals("GL")) {
+			this.myAccount = new GoldAccount(myAccount.getBalance(), myAccount.getAccountNumber(), myAccount.getActive());
+		}else if(myAccount !=null && myAccount.getAccountNumber().substring(0,2).equals("SA")){
+			this.myAccount = new SavingsAccount(myAccount.getBalance(), myAccount.getAccountNumber(), myAccount.getActive());
+		}else if(myAccount != null && myAccount.getAccountNumber().substring(0,2).equals("CH")){
+			this.myAccount = new ChequingAccount(myAccount.getBalance(), myAccount.getAccountNumber(), myAccount.getActive());
 		}else{
 			System.out.println("Account cannot be null");
 		}
